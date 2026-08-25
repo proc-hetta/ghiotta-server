@@ -35,6 +35,7 @@ async function connectClient(client: MatterClient) {
 
   if (client.connection.connected) return;
 
+  client.disconnect();
   logger.info("Connecting client to the server...");
   try {
     await client.startListening();

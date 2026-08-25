@@ -1,5 +1,11 @@
 {
+<<<<<<< HEAD
   "files.associations": {
     "*.css": "tailwindcss"
   }
+=======
+	"files.associations": {
+		"*.css": "tailwindcss"
+	}
+>>>>>>> 4bbf94a (WIP)
 }

@@ -1,12 +1,11 @@
 import { logger } from "$lib/logging";
 import { getClient } from "$lib/matterjs-client";
-import { removeNode, getNode } from "$lib/server/db/smart-devices";
+import { removeNode } from "$lib/server/db/smart-devices";
 import { error, json, type RequestHandler } from "@sveltejs/kit";
 
 export const GET: RequestHandler = async ({ params }) => {
   const device_id = params.device_id!;
-  const node = getClient().nodes[device_id];
-  return json({ name: (await getNode(BigInt(node.node_id)))?.name ?? "Unknown", ...node });
+  return json(getClient().nodes[device_id]);
 };
 
 export const DELETE: RequestHandler = async ({ locals, params }) => {
